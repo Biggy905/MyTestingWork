@@ -1,0 +1,5 @@
+# phpstorm project files
+.idea
+
+# env local file
+.env.local
