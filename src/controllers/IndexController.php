@@ -10,8 +10,7 @@ final class IndexController extends Controller
     {
         return $this->response(
             [
-                'code' => 404,
-                'message' => 'This request is not found.'
+                'message' => 'This URL is not found.'
             ]
         );
     }
