@@ -13,8 +13,6 @@ final class SignUpController extends Controller
 
     public function actionAuth()
     {
-
-
         return $this->response();
     }
 }

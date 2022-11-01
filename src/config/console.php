@@ -22,7 +22,7 @@ $config = [
         ],
         'fixture' => [
             'class' => \yii\console\controllers\FixtureController::class,
-            'namespace' => 'app\console\fixtures',
+            'namespace' => 'app\tests\_fixtures',
         ],
     ],
     'components' => [
