@@ -2,14 +2,25 @@
 
 namespace app\forms;
 
+use app\components\Validator;
+
 final class ProductsForm extends AbstractForm
 {
     public string $id;
     public string $name;
     public string $details;
 
-    public function validate()
+    protected function rules(): array
     {
-        $this->errorsValidate = [];
+        return [
+            [
+                ['id', 'name'],
+                'string',
+            ],
+            [
+                'details',
+                'safe',
+            ]
+        ];
     }
 }

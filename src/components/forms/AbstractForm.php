@@ -1,18 +1,18 @@
 <?php
 
-
-namespace app\forms;
+namespace app\components\forms;
 
 use ReflectionClass;
 use ReflectionProperty;
+use app\components\Validator;
 
 abstract class AbstractForm implements FormInterface
 {
-    public $errorsValidate;
+    protected Validator $validator;
 
     public function __construct()
     {
-        $this->validate();
+        $this->validator = new Validator($this->rules());
     }
 
     public function setAttributes(array $attributes = []): void
@@ -37,13 +37,13 @@ abstract class AbstractForm implements FormInterface
         return $attributes;
     }
 
-    public function getErrors()
+    protected function rules(): array
     {
-        return $this->errorsValidate;
+        return [];
     }
 
-    public function hasErrors(): bool
+    public function getErrors()
     {
-        return !empty($this->errorsValidate);
+
     }
 }

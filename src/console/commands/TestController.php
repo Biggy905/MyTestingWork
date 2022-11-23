@@ -4,6 +4,7 @@
 namespace app\console\commands;
 
 
+use app\components\Validator;
 use app\forms\ProductsForm;
 use yii\console\Controller;
 
@@ -17,10 +18,9 @@ class TestController extends Controller
             'details' => 'Nfa;lkg wersdfs kf;sdfk',
         ];
 
-        $product = new ProductsForm();
-        $product->setAttributes($attributes);
-        $a = $product->getAttributes();
+        $form = new ProductsForm();
+        $form->setAttributes($attributes);
 
-        var_dump($a);
+        var_dump($form);
     }
 }

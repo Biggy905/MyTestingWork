@@ -5,7 +5,7 @@ namespace app\components;
 use yii\filters\ContentNegotiator;
 use yii\web\Response;
 
-class Controller extends \yii\web\Controller
+abstract class Controller extends \yii\web\Controller
 {
     public function behaviors()
     {
