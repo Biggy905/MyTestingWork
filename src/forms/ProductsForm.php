@@ -2,7 +2,7 @@
 
 namespace app\forms;
 
-use app\components\Validator;
+use app\components\forms\AbstractForm;
 
 final class ProductsForm extends AbstractForm
 {
@@ -10,12 +10,12 @@ final class ProductsForm extends AbstractForm
     public string $name;
     public string $details;
 
-    protected function rules(): array
+    public function rules(): array
     {
         return [
             [
                 ['id', 'name'],
-                'string',
+                'integer',
             ],
             [
                 'details',

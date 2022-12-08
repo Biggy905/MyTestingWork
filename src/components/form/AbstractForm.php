@@ -4,17 +4,9 @@ namespace app\components\forms;
 
 use ReflectionClass;
 use ReflectionProperty;
-use app\components\Validator;
 
 abstract class AbstractForm implements FormInterface
 {
-    protected Validator $validator;
-
-    public function __construct()
-    {
-        $this->validator = new Validator($this->rules());
-    }
-
     public function setAttributes(array $attributes = []): void
     {
         foreach ($attributes as $property => $value) {
@@ -35,15 +27,5 @@ abstract class AbstractForm implements FormInterface
         }
 
         return $attributes;
-    }
-
-    protected function rules(): array
-    {
-        return [];
-    }
-
-    public function getErrors()
-    {
-
     }
 }
