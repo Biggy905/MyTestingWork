@@ -4,10 +4,15 @@ namespace app\console\commands;
 
 use yii\console\Controller;
 
-final class RbacController extends Controller
+class RbacController extends Controller
 {
-    public function actionGo(): void
+    public function actionInit()
     {
-        echo "Команда пошла!\n";
+
+    }
+
+    public function actionAssign()
+    {
+
     }
 }
